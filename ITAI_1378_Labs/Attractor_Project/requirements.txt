@@ -1,23 +1,18 @@
-import os                                   # operating system and path management
-import numpy as np                          # numerical data
-import matplotlib.pyplot as plt             # plotting graphs
-import matplotlib
-matplotlib.use('Agg')                       # crash prevention
-import shutil                               # file management
-import json                                 # JSON handling
-import torch                                # GPU computing library
-import collections                          # specialized data containers
-import gc                                   # garbage collector for memory cleanup
-import re                                   # regular expressions for string cleaning and searches
-import cv2 # computer vision
-import pickle                               # Serialization and saving of trained machine learning models to disk (for SVM)
-
-from PIL import Image, ImageDraw, ImageFont # Loading and transforming images, as well as drawing text and borders
-from ultralytics import YOLO                # Detecting people and objects using the YOLO11x model
-from transformers import Qwen2VLForConditionalGeneration, AutoProcessor # Loading the Qwen2-VL-7B-Instruct multimodal language model
-from qwen_vl_utils import process_vision_info # Preparation for Qwen2-VL
-from IPython.display import display, Image as IPyImage, HTML # Displaying images in the notebook
-
-import torchvision.models as models         # computer vision neural networks (including ResNet50)
-import torchvision.transforms as transforms # image preprocessing for neural networks
-from sklearn.svm import OneClassSVM    # One-Class Support Vector Machine
+# os
+# shutil
+# json
+# collections
+# gc
+# re
+# pickle
+# numpy
+# matplotlib
+# opencv-python
+# Pillow
+# ultralytics
+# transformers
+# qwen-vl-utils
+# ipython
+# torch
+# torchvision
+# scikit-learn
