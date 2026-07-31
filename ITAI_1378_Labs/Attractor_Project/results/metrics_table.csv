@@ -1,1 +1,17 @@
-
+Pipeline,Metric,Value,Calculation,Description
+JSON_Qwen2,Accuracy,93.89%,(7+239)/262,Overall correct predictions across the entire dataset
+JSON_Qwen2,Recall,70.00%,7/10,Percentage of target images successfully retrieved
+JSON_Qwen2,Precision_Top20,35.00%,7/20,Percentage of relevant images within the uncalibrated top 20 list
+JSON_Qwen2,Precision_Optimized,100.00%,4/4,Precision achieved by applying a 95% confidence threshold cutoff
+JSON_Qwen2,True_Positives,7,Count,Real target images correctly ranked in Top-20
+JSON_Qwen2,False_Positives,13,Count,Synthetic noise images incorrectly ranked in Top-20
+JSON_Qwen2,True_Negatives,239,Count,Synthetic noise images correctly filtered out
+JSON_Qwen2,False_Negatives,3,Count,Real target images missed and pushed out of Top-20
+SVM_Geometric,Accuracy,92.36%,(5+237)/262,Overall correct predictions across the entire dataset
+SVM_Geometric,Recall,50.00%,5/10,Percentage of target images successfully retrieved
+SVM_Geometric,Precision_Top20,25.00%,5/20,Percentage of relevant images within the uncalibrated top 20 list
+SVM_Geometric,Precision_Optimized,100.00%,2/2,Precision achieved by applying a >0.05 hyperplane distance cutoff
+SVM_Geometric,True_Positives,5,Count,Real target images correctly ranked in Top-20
+SVM_Geometric,False_Positives,15,Count,Synthetic noise images incorrectly ranked in Top-20
+SVM_Geometric,True_Negatives,237,Count,Synthetic noise images correctly filtered out
+SVM_Geometric,False_Negatives,5,Count,Real target images missed and pushed out of Top-20
