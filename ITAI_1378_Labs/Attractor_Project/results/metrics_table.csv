@@ -15,3 +15,5 @@ SVM_Geometric,True_Positives,5,Count,Real target images correctly ranked in Top-
 SVM_Geometric,False_Positives,15,Count,Synthetic noise images incorrectly ranked in Top-20
 SVM_Geometric,True_Negatives,237,Count,Synthetic noise images correctly filtered out
 SVM_Geometric,False_Negatives,5,Count,Real target images missed and pushed out of Top-20
+System_Performance,Target_Time,< 2.0 sec,Goal for 1 crowd photo,Blueprint requirement for commercial viability
+System_Performance,Batch_Scoring_Time,1.8 sec,1.7s (SVM) + 0.1s (JSON),Execution time to score and rank 262 pre-processed crops
