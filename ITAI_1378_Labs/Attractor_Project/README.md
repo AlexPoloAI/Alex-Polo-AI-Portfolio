@@ -1,6 +1,8 @@
 Attractor Project: Final Build
 This repository contains one final proof of concept for ITAI 1378 course. My name is Alex Polozov.
 
+Demo: https://drive.google.com/file/d/1-eEZxfBNKs6GbjEF30dIdnxESrmOS5fd/view?usp=drive_link 
+
 What I Built
 This system processes images and detects people who match the user's specific preferences. Visual input from folder '01_my_taste_profiles'. This code processes those pixels. Real output generates. This pipeline uses YOLO11x to crop people from photos. After that step, this system uses Qwen2-VL to analyze semantic features. I also implemented One-Class SVM to measure geometric distances between image vectors.
 
