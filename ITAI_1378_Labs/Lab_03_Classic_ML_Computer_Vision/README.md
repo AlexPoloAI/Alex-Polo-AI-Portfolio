@@ -1,33 +1,41 @@
-L03 Using Classic ML in Computer Vision 
-Due Jun 17 by 11:59pm Points 100 Submitting a file upload Attempts 1 Allowed Attempts 2
-Module 3 Lab Instructions
-For this module, you have two lab options to choose from. Both lab notebooks and instructions are available for download in the assignment section on module 03:
+# Focused Image Classification with SVM
 
-Instructions: PDF format
-Notebooks: .ipynb format
-Option 1: Comprehensive Feature Extraction & Algorithm Comparison (Lab A) This lab covers the breadth of today's lecture material. You will:
+## Problem Statement
+This project explores basic image classification using Support Vector Machines (SVM). The main goal is to build one working classifier, extract features, and understand how different parameters and image types change model accuracy and training time.
 
-Explore multiple feature extraction techniques (SIFT, HOG, LBP, edge detection)
-Implement various ML algorithms (SVM, Random Forest, k-NN, Naive Bayes)
-Compare and contrast their performance on the same dataset
-Gain hands-on experience with the complete classic ML pipeline
-Option 2: Focused Image Classification with SVM (Lab B) This lab provides an in-depth exploration of a single, powerful approach. You will:
+## Approach
+* Loaded CIFAR-10 dataset using one ZIP archive from Google Drive to optimize speed.
+* Extracted features by converting color images to grayscale and flattening image matrices.
+* Built and trained SVM classification models using different kernels (Linear, RBF, Polynomial).
+* Evaluated model performance and compared training times between color and grayscale data.
+* Added visual checks to verify data integrity at every processing step.
 
-Build a complete image classification system using SVM
-Experiment with different kernels and hyperparameters
-Optimize performance through systematic tuning
-Master one algorithm thoroughly before moving to others
-How to Choose:
+## Technologies Used
+* Python 3
+* Scikit-learn (SVC, classification_report, accuracy_score)
+* TensorFlow (Dataset tools)
+* NumPy, Matplotlib, Pandas
 
-Choose Option 1 if you want broad exposure to multiple techniques
-Choose Option 2 if you prefer deep understanding of one method
-Both labs use OpenCV and scikit-learn
-Both fulfill the module requirements
-Submission Requirements:
+## Key Findings
+* Training on grayscale images is faster for large datasets, but color images hold more information and provide better accuracy.
+* Classical machine learning models can struggle with complex image tasks. Moving resource-intensive computations to local high-performance hardware, like an RTX 5090 GPU, helps manage long training times better than standard cloud services.
 
-Complete ONE lab option
-Name your file using this format:
-Lab A: L03_A_YourName_ITAI_1378.ipynb
-Lab B: L03_B_YourName_ITAI_1378.ipynb
-Example: L03_A_JohnSmith_ITAI_1378.ipynb
-Include all code, outputs, markdown explanations, answers  to the questions and  reflective questions alson on markdown cells 
+## Results & Performance Metrics
+
+| Model Configuration | Training Time | Accuracy Score |
+| :--- | :--- | :--- |
+| Linear Kernel (Grayscale, 3000 test images) | ~ 4.00 m | 0.54 |
+| RBF Kernel (Grayscale, 999 train images) | 6.67 s | 0.63 |
+| Polynomial Kernel (Grayscale, 999 train images) | 1.82 s | 0.56 |
+| Linear Kernel (Color, 999 train images) | 1.68 s | 0.55 |
+| Linear Kernel (Grayscale, 999 train images) | 2.33 s | 0.44 |
+
+Check that `results/` folder to see visual verifications of datasets and processing stages.
+
+## Dataset Handling
+* **Dataset Name:** CIFAR-10
+* **Source:** Kaggle (CIFAR-10 pngs in folders)
+* This public dataset is larger than 100MB. Do not upload it to GitHub. You can download this dataset directly via Kaggle or load it using one standard `tensorflow.keras.datasets.cifar10.load_data()` command in Python.
+
+## How to Run
+Open this `.ipynb` notebook in Google Colab or any local Jupyter environment. If you want to use that ZIP archive method, you need to mount your Google Drive. Otherwise, change that code to load data directly via Keras. Run all cells to see output metrics and image plots.
